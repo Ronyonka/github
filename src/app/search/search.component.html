@@ -1,5 +1,4 @@
-<div class="container">
-  <label for="search">Search Username</label>
-  <input type="text" name="search" value="">
-  <button type="submit" name="button">Search</button>
+<div class="container jumbotron">
+  <input type="text" name="search" placeholder="Github Username" (keyup)="findUser()">
 </div>
+  <app-user *ngIf="user" [user]="user"></app-user>
