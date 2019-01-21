@@ -2,8 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {GithubSearchService} from '../github-request/github-search.service';
 import {User} from '../user';
+// import {UserComponent} from '../user/user.component';
 import {filter, switchMap, debounceTime, catchError} from 'rxjs/operators';
 import {EMPTY} from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-search',
@@ -11,6 +13,7 @@ import {EMPTY} from 'rxjs';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  user:User;
   findControl = new FormControl ();
   error: boolean = false;
   user: User = null;
