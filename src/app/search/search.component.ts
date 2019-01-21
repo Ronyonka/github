@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  providers: [GithubSearchService]
+  providers: [GithubSearchService],
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
@@ -21,10 +21,9 @@ export class SearchComponent implements OnInit {
   constructor (private githubService:GithubSearchService) {}
 
   ngOnInit() {
-  findUser(){
+  function findUser(){
     this.findControl.valueChanges
   .pipe (
-    filter (value => value.length> 2),
     debounceTime (1000),
     switchMap (value =>
       this.githubService.getUser(value).pipe (
