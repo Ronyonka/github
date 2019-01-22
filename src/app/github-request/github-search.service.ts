@@ -11,8 +11,8 @@ export class GithubSearchService {
 
   constructor (private http:HttpClient) {}
 
-  getUser(name: string): Observable <User> {
-     const url = `https://api.github.com/users/${name}`;
+  getUser(login:string): Observable <User> {
+     const url = `https://api.github.com/users/${login}`;
      return this.http.get <User>(url);
    }
 }

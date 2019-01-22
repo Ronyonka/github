@@ -1,4 +1,4 @@
 <div class="container jumbotron">
   <input type="text" name="search" placeholder="Github Username" (keyup)="findUser()">
 </div>
-  <app-user *ngIf="user" [user]="user"></app-user>
+  <app-user [(ngModel)]="Username"></app-user>
