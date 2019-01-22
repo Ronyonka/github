@@ -14,13 +14,15 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  user:User;
-  findControl = new FormControl ();
-  error: boolean = false;
+  // user:User;
+  // user:any[];
+  // findControl = new FormControl ();
+  // error: boolean = false;
   // user: User = null;
-  constructor (private githubService:GithubSearchService) {
+  constructor (private githubService:GithubSearchService, user:User) {
     this.githubService.getUser().subscribe(profile =>{
       console.log(user);
+      this.user = user;
     });
   }
 

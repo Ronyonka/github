@@ -25,3 +25,9 @@
     </ul>
   </div>
 </div> -->
+<div *ngIf="user">
+  <div class="card bg-light">
+    {{user.name}} <small>{{user.login}}</small>
+    <span *ngIf="user.company">Works at: {{user.company}}</span>
+  </div>
+</div>

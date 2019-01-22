@@ -1,4 +1,9 @@
 <div class="container jumbotron">
   <input type="text" name="search" placeholder="Github Username">
 </div>
-  <app-user></app-user>
+<div *ngIf="user">
+  <div class="card bg-light">
+    {{user.name}} <small>{{user.login}}</small>
+    <span *ngIf="user.company">Works at: {{user.company}}</span>
+  </div>
+</div>
