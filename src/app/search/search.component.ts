@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment';
   selector: 'app-search',
   templateUrl: './search.component.html',
   providers: [GithubSearchService],
+  providers: [User],
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
