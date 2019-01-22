@@ -10,43 +10,43 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  providers: [GithubSearchService],
-  providers: [User],
+
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
   // user:User;
-  // user:any[];
+  user: any
+  username:string;
   // findControl = new FormControl ();
   // error: boolean = false;
   // user: User = null;
-  constructor (private githubService:GithubSearchService, user:User) {
-    this.githubService.getUser().subscribe(profile =>{
+  constructor (private githubService:GithubSearchService) {
+    this.githubService.getUserInfo().subscribe(user =>{
       console.log(user);
       this.user = user;
     });
   }
 
   ngOnInit() {
-  function findUser(){
-    this.findControl.valueChanges
-  .pipe (
-    debounceTime (1000),
-    switchMap (value =>
-      this.githubService.getUser(value).pipe (
-        catchError (err => {
-          this.user = null;
-          this.error = true;
-          return EMPTY;
-        })
-      )
-    )
-  )
+  // function findUser(){
+  //   this.findControl.valueChanges
+  // .pipe (
+  //   debounceTime (1000),
+  //   switchMap (value =>
+  //     this.githubService.getUser(value).pipe (
+  //       catchError (err => {
+  //         this.user = null;
+  //         this.error = true;
+  //         return EMPTY;
+  //       })
+  //     )
+  //   )
+  // )
 
-  .subscribe (user => {
-    this.user = user;
-    this.error = false;
-  });
+  // .subscribe (user => {
+  //   this.user = user;
+  //   this.error = false;
+  // });
   }
 }
 

@@ -8,10 +8,10 @@ import {User} from '../user';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  user:any[];
+  user: any;
 
   constructor(private githubService:GithubSearchService) {
-    this.githubService.getUser().subscribe(use => {
+    this.githubService.getUser().subscribe(user => {
       console.log(user);
       this.user = user;
     });
