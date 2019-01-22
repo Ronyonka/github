@@ -18,7 +18,11 @@ export class SearchComponent implements OnInit {
   findControl = new FormControl ();
   error: boolean = false;
   // user: User = null;
-  constructor (private githubService:GithubSearchService) {}
+  constructor (private githubService:GithubSearchService) {
+    this.githubService.getUser().subscribe(profile =>{
+      console.log(user);
+    });
+  }
 
   ngOnInit() {
   function findUser(){
