@@ -1,33 +1,41 @@
-<!-- <div class="github-card user-card">
-  <div class="header User"></div>
-  <a class="avatar"
-    [href]="'https://github.com/'+user.login">
-      <img [src]="user.avatar_url+'&amp;s=80'" [alt]="user.name" />
-    </a>
-  <div class="content">
-    <h1>{{user.name}}</h1>
-    <ul class="status">
-      <li>
-        <a [href]="'https://github.com/'+user.login+'?tab=repositories'">
-            <strong>{{user.public_repos}}</strong>Repos
-          </a>
-      </li>
-      <li>
-        <a [href]="'https://gist.github.com/'+user.login">
-            <strong>{{user.public_gists}}</strong>Gists
-          </a>
-      </li>
-      <li>
-        <a [href]="'https://github.com/'+user.login+'/followers'">
-            <strong>{{user.followers}}</strong>Followers
-          </a>
-      </li>
-    </ul>
+<form action="" class="search-form">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findUser()">
   </div>
-</div> -->
-<!-- <div *ngIf="user">
-  <div class="card bg-light">
-    {{user.name}} <small>{{user.login}}</small>
-    <span *ngIf="user.company">Works at: {{user.company}}</span>
+</form>
+<div *ngIf="user">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{user.name}} <small>({{user.login}})</small>
+      <span *ngIf="user.company">, Works at {{user.company}}</span>
+      {{user.location}}
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="user Image">
+        </div>
+        <div class="col-sm-5">
+          <ul class="list-group">
+            <li class="list-group-item" *ngIf="user.bio">{{user.bio}}</li>
+            <li class="list-group-item" *ngIf="user.hireable">Available for hire</li>
+            <li class="list-group-item" *ngIf="user.blog"><a href="{{user.blog}}" target="_blank">{{user.blog}}</a></li>
+            <li class="list-group-item" *ngIf="user.email"><a href="emailto:{{user.email}}">{{user.email}}</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <div>
+            <p>
+              <span class="label label-default">{{user.followers}} Followers</span>
+              <span class="label label-primary">Following {{user.following}}</span>
+              <span class="label label-success">{{user.public_gists}} Public gists</span>
+              <span class="label label-info">{{user.public_repos}} Public Repos</span>
+            </p>
+            <p><a href="{{user.html_url}}" target="_blank" class="btn btn-success btn-sm">View user on github</a></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div> -->
+</div>
