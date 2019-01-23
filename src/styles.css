@@ -1,4 +1,15 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-img {
-  border-radius: 5px 20px 5px;
+
+.img-responsive{
+  height: 85%;
+  width: auto;
+  border-radius: 5px 69px 5px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }

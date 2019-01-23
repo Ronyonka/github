@@ -7,40 +7,39 @@
 
 <div class="container">
   <div *ngIf="user">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        {{user.name}} <small>({{user.login}})</small>
-        <span *ngIf="user.company">, Works at {{user.company}}</span>
-        {{user.location}}
+    <div class="row">
+      <div class="col-md-5">
+        <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="user Image">
+        <br><br>
+        <p><a href="{{user.html_url}}" target="_blank" class="btn btn-outline-dark">View user on github</a></p>
       </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-3">
-            <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="user Image">
-          </div>
-          <div class="col-md-5">
-            <ul class="list-group">
-              <li class="list-group-item" *ngIf="user.bio">{{user.bio}}</li>
-              <li class="list-group-item" *ngIf="user.hireable">Available for hire</li>
-              <li class="list-group-item" *ngIf="user.blog"><a href="{{user.blog}}" target="_blank">{{user.blog}}</a></li>
-              <li class="list-group-item" *ngIf="user.email"><a href="emailto:{{user.email}}">{{user.email}}</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <div>
-              <p>
-                <span class="label label-default">{{user.followers}} Followers</span>
-                <span class="label label-primary">Following {{user.following}}</span>
-                <span class="label label-success">{{user.public_gists}} Public gists</span>
-                <span class="label label-info">{{user.public_repos}} Public Repos</span>
-              </p>
-              <p><a href="{{user.html_url}}" target="_blank" class="btn btn-success">View user on github</a></p>
-
-            </div>
-          </div>
-        </div>
+      <div class="col-md-4">
+        <p><strong>Name:</strong> {{user.name}}</p>
+        <p><strong>Username:</strong> {{user.login}}</p>
+        <p><strong>Place:</strong> {{user.location}}</p>
+        <p><strong>Joined:</strong> {{user.created_at}}</p>
+        <p *ngIf="user.company"><strong>Works at:</strong> {{user.company}}</p>
+        <p *ngIf="user.email"><strong>email:</strong><a href="emailto:{{user.email}}">{{user.email}}</a></p>
+      </div>
+      <div class="col-md-3">
+        <p><strong>Followers:</strong> {{user.followers}}</p>
+        <p><strong>Following:</strong> {{user.following}}</p>
       </div>
     </div>
-  </div>
+    <hr>
+    <div class="row">
+        <h2>Public Repos</h2>
+        <div class="col-md-9">
+          <section class="box" *ngFor ="let repo of repos">
+              <p><strong>{{repo.name}}</strong></p>
+              <h5><strong>Description:</strong></h5>
+                <p>{{repo.description}} </p>
 
+              <p><a href="{{repo.git_url}}" class="btn btn-outline-dark"> View on git </a></p>
+              <hr>
+          </section>
+        </div>
+
+    </div>
+  </div>
 </div>
