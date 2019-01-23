@@ -15,10 +15,9 @@ Try it out : https://ronyonka.github.io/github/
 * clone this repository  from https://github.com/ronyonka/github/tree/master
 
 ## Behaviour Driven Development
-* A system that allows the user search through Github for users and repositories
-* The user first views the landing page of author, and can click to view any of the repositories .
-* The user can click the profile image on the right to access actual github profile of author
-* The user can click on search github link to search for other repositories
+* A system that allows the user search through Github for users
+* The user inputs a github username into the search bar.
+* If the profile the user is searching exists it displays the information on the page.
 * The user can click the back to my profile link to access author's page
 
 ## Live Demo
