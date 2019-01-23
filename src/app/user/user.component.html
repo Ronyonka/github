@@ -18,7 +18,7 @@
         <p><strong>Name:</strong> {{user.name}}</p>
         <p><strong>Username:</strong> {{user.login}}</p>
         <p><strong>Place:</strong> {{user.location}}</p>
-        <p><strong>Joined:</strong> {{user.created_at}}</p>
+        <p><strong>Joined:</strong> {{user.created_at | date}}</p>
         <p *ngIf="user.company"><strong>Works at:</strong> {{user.company}}</p>
         <p *ngIf="user.email"><strong>email:</strong><a href="emailto:{{user.email}}">{{user.email}}</a></p>
       </div>
@@ -36,7 +36,7 @@
               <h5><strong>Description:</strong></h5>
                 <p>{{repo.description}} </p>
 
-              <p><a href="{{repo.git_url}}" class="btn btn-outline-dark"> View on git </a></p>
+              <p><a href="{{repo.git_url}}" class="btn btn-outline-dark" appColor> View on git </a></p>
               <hr>
           </section>
         </div>

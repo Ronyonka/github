@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SearchComponent } from './search/search.component';
 import {GithubSearchService} from './github-request/github-search.service';
+import { ColorDirective } from './color.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    SearchComponent
+    SearchComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
