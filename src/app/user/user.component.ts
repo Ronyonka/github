@@ -14,7 +14,9 @@ export class UserComponent implements OnInit {
   user: any[];
   repos: any[];
   username: string;
-
+  // today = new Date();
+  // lessThan = new Date("user.created_at");
+  // greaterThan = new Date("2019-01-11");
   constructor(private githubService: GithubSearchService) {
 
   }

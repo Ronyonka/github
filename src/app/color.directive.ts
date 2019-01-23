@@ -18,6 +18,6 @@ constructor(private doms: DomSanitizer) { }
 @HostListener('click') onClick() {
   this.toggle = !this.toggle;
 }
-  constructor() { }
+
 
 }
