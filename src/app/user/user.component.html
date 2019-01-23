@@ -1,8 +1,12 @@
-<form class="card bg-light">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findUser()">
+<main role="main" class="container">
+  <div class="jumbotron">
+    <form class="card bg-light">
+      <div class="form-group">
+        <input type="text" placeholder="Github username" [(ngModel)]="username" name="username" (keyup)="findUser()">
+      </div>
+    </form>
   </div>
-</form>
+</main>
 <div *ngIf="user">
   <div class="panel panel-default">
     <div class="panel-heading">
