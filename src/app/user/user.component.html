@@ -1,45 +1,70 @@
-<main role="main" class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+<a class="navbar-brand" href="#">Github Search</a>
+<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span> -->
+<!-- </button> -->
+<!-- <div class="collapse navbar-collapse" id="navbarCollapse"> -->
+<!-- <ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul> -->
+<form class="form-inline mt-2 mt-md-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Github username" [(ngModel)]="username" name="username" (keyup)="findUser()">
+</form>
+<!-- </div> -->
+</nav>
+<!-- <main role="main" class="container">
   <div class="jumbotron">
     <form class="card bg-light">
-      <div class="form-group">
-        <input type="text" placeholder="Github username" [(ngModel)]="username" name="username" (keyup)="findUser()">
-      </div>
+      <div class="form-group"> -->
+        <!-- <input type="text" placeholder="Github username" [(ngModel)]="username" name="username" (keyup)="findUser()"> -->
+      <!-- </div>
     </form>
   </div>
-</main>
-<div *ngIf="user">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      {{user.name}} <small>({{user.login}})</small>
-      <span *ngIf="user.company">, Works at {{user.company}}</span>
-      {{user.location}}
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-3">
-          <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="user Image">
-        </div>
-        <div class="col-md-5">
-          <ul class="list-group">
-            <li class="list-group-item" *ngIf="user.bio">{{user.bio}}</li>
-            <li class="list-group-item" *ngIf="user.hireable">Available for hire</li>
-            <li class="list-group-item" *ngIf="user.blog"><a href="{{user.blog}}" target="_blank">{{user.blog}}</a></li>
-            <li class="list-group-item" *ngIf="user.email"><a href="emailto:{{user.email}}">{{user.email}}</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <div>
-            <p>
-              <span class="label label-default">{{user.followers}} Followers</span>
-              <span class="label label-primary">Following {{user.following}}</span>
-              <span class="label label-success">{{user.public_gists}} Public gists</span>
-              <span class="label label-info">{{user.public_repos}} Public Repos</span>
-            </p>
-            <p><a href="{{user.html_url}}" target="_blank" class="btn btn-success">View user on github</a></p>
+</main> -->
+<div class="container">
+  <div *ngIf="user">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {{user.name}} <small>({{user.login}})</small>
+        <span *ngIf="user.company">, Works at {{user.company}}</span>
+        {{user.location}}
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="user Image">
+          </div>
+          <div class="col-md-5">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="user.bio">{{user.bio}}</li>
+              <li class="list-group-item" *ngIf="user.hireable">Available for hire</li>
+              <li class="list-group-item" *ngIf="user.blog"><a href="{{user.blog}}" target="_blank">{{user.blog}}</a></li>
+              <li class="list-group-item" *ngIf="user.email"><a href="emailto:{{user.email}}">{{user.email}}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <div>
+              <p>
+                <span class="label label-default">{{user.followers}} Followers</span>
+                <span class="label label-primary">Following {{user.following}}</span>
+                <span class="label label-success">{{user.public_gists}} Public gists</span>
+                <span class="label label-info">{{user.public_repos}} Public Repos</span>
+              </p>
+              <p><a href="{{user.html_url}}" target="_blank" class="btn btn-success">View user on github</a></p>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

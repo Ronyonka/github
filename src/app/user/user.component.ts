@@ -11,7 +11,7 @@ import {User} from '../user';
 
 export class UserComponent implements OnInit {
   user:any[];
-  repos: any[];
+  // repos: any[];
   username:string;
 
   constructor(private githubService: GithubSearchService) {
